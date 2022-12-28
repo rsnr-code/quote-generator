@@ -1,32 +1,30 @@
-import "./App.css";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import Header from "./components/Header";
 import Welcome from "./components/Welcome";
 import Quote from "./components/Quote";
+import "./App.css";
 
 const videoArr = ["/tv2.mp4", "/tv3.mp4", "/tv4.mp4", "/tv5.mp4"];
 let video = videoArr[Math.floor(Math.random() * videoArr.length)];
 
 function App() {
-  const [explore, setExplore] = useState(false);
+  const [previewQuote, setPreviewQuote] = useState(false);
 
   const quoteRequest = (event) => {
     event.preventDefault();
-    setExplore(!explore);
+    setPreviewQuote(!previewQuote);
     video = videoArr[Math.floor(Math.random() * videoArr.length)];
   };
 
   return (
-    <div>
       <section id="showcase">
         <Header />
-        {!explore ? (
+        {!previewQuote ? (
           <Welcome quoteRequest={quoteRequest} video={video}/>
         ) : (
          <Quote quoteRequest={quoteRequest}/>
         )}
       </section>
-    </div>
   );
 }
 
