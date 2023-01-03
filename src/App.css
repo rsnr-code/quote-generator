@@ -137,6 +137,23 @@ header .logo
   }
   .text h3
   {
-    font-size: 2em;
+    font-size: 3em;
+  }
+}
+
+@media (max-width: 450px)
+{
+  #showcase,
+  #showcase header
+  {
+    padding: 40px;
+  }
+  .text h2
+  {
+    font-size: 1.6em;
+  }
+  .text h3
+  {
+    font-size: 3em;
   }
 }
